@@ -38,7 +38,7 @@ export default function SignIn() {
                 </label> */}
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control "
                   id="userId"
                   value={userId}
                   placeholder="Enter your User ID"
@@ -68,6 +68,10 @@ export default function SignIn() {
                 </button>
               </div>
             </form>
+            <div className="text-center">
+            <a href="http://" className="text-dark">Don't have an account ? Signup here</a>
+            </div>
+           
           </div>
           <div className="col-md-4 col-12"></div>
         </div>

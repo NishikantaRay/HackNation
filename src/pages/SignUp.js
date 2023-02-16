@@ -90,9 +90,7 @@ export default function SignUp() {
                 />
               </div>
               <div className="mb-3">
-                {/* <label for="exampleFormControlInput1" className="form-label">
-                  Password
-                </label> */}
+
                 <input
                   type="password"
                   className="form-control"
@@ -107,6 +105,9 @@ export default function SignUp() {
                 </button>
               </div>
             </form>
+            <div className="text-center">
+            <a href="http://" className="text-dark">Already have an account ? Signin here</a>
+            </div>
           </div>
           <div className="col-md-4 col-12"></div>
         </div>

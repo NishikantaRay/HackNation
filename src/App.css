@@ -1,4 +1,26 @@
 body{
     /* image */
-    background-image: url(bg.png);
+    /* background-image: url(bg.png); */
+}
+
+.logocss{
+
+    /* logo text  */
+    color: #130080;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+.logocss:hover{
+    color: #008080;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.footerlogo{
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
 }

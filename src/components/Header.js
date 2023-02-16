@@ -3,15 +3,34 @@ import React from 'react'
 export default function Header() {
     return (
         <div>
-            <section className="container col-12 col-md-10 mt-3">
-                <div className="jumbotron px-3 py-4 px-sm-4 py-sm-5 bg-light rounded-3 mb-3">
-                    <h1 className="display-4 main-header">CAMPUS <br /> HEALTH  HUB</h1>
-                    <p className="lead">Your One-Stop Solution for Health and Wellness on Campus</p>
-                    <div className="col-2">
-                        <a className="btn btn-primary-bg " href="#" role="button">Get started</a>
+            <div class="slider-area  position-relative">
+            <div class="slider-active">
+
+                <div class="single-slider">
+                    <div class="slider-cap-wrapper slider-height">
+                        <div class="hero-caption">
+                            <span data-animation="fadeInUp" data-delay=".2s">A complete Health solution</span>
+                            <h1 data-animation="fadeInUp" data-delay=".4s">Campus Health Hub</h1>
+                            <p data-animation="fadeInUp" data-delay=".6s">Your One-Stop Solution for Health and Wellness on Campus
+</p>
+
+                            <div class="col-xl-10 float-left">
+                                <button type="submit" className='btn_1 d-none d-xl-block'>Get Started</button>
+                               
+                            </div>
+                        </div>
+                        <div class="hero-img position-relative">
+                            <img src="assets/img/bg.png"  alt="" data-animation="fadeInRight"
+                                data-transition-duration="5s"/>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+
+            <div class="hero-shape d-none d-xl-block">
+                <img src="assets/img/hero/hero-shape.png" alt=""/>
+            </div>
+        </div>
         </div>
     )
 }

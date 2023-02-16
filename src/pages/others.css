@@ -1,4 +1,4 @@
-/* css for html input field */
+
 
 input[type="text"] {
   width: 100%;
@@ -22,7 +22,6 @@ input[type="password"] {
   outline: none;
 }
 
-/* css for button */
 .btn-primary-bg{
   background-color: #008080 ;
   color: white;
@@ -32,7 +31,7 @@ input[type="password"] {
   cursor: pointer;
   width: 100%;
 }
-/* text design */
+
 .navbar-brand{
   color: #008080;
   font-size: 20px;
