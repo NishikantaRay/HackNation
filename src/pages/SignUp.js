@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './others.css'
 export default function SignUp() {
   const [user, setUser] = useState({
     name: "",
@@ -34,11 +35,15 @@ export default function SignUp() {
 
   console.log(user);
   return (
-    <>
-      <div className="container ">
+    <div >
+
+      <div className="container " >
+      
+
+
         <div className="text-center mt-3">
           <img
-            src="https://www.thesparksfoundationsingapore.org/images/logo_small.png"
+            src="logo.png"
             width={150}
             height={150}
             alt="logo"
@@ -49,9 +54,9 @@ export default function SignUp() {
           <div className="col-md-4 col-12">
             <form action="">
               <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">
+                {/* <label for="exampleFormControlInput1" className="form-label">
                   User Id
-                </label>
+                </label> */}
                 <input
                   type="text"
                   className="form-control"
@@ -61,9 +66,9 @@ export default function SignUp() {
                 />
               </div>
               <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">
+                {/* <label for="exampleFormControlInput1" className="form-label">
                   Name
-                </label>
+                </label> */}
                 <input
                   type="text"
                   className="form-control"
@@ -73,9 +78,9 @@ export default function SignUp() {
                 />
               </div>
               <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">
+                {/* <label for="exampleFormControlInput1" className="form-label">
                   Mobile Number
-                </label>
+                </label> */}
                 <input
                   type="text"
                   className="form-control"
@@ -85,9 +90,9 @@ export default function SignUp() {
                 />
               </div>
               <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">
+                {/* <label for="exampleFormControlInput1" className="form-label">
                   Password
-                </label>
+                </label> */}
                 <input
                   type="password"
                   className="form-control"
@@ -97,7 +102,7 @@ export default function SignUp() {
                 />
               </div>
               <div className="text-center">
-                <button type="submit" onClick={(e)=>{PostData(e)}} className="btn btn-primary">
+                <button type="submit" onClick={(e)=>{PostData(e)}} className="btn btn-primary-bg">
                   Submit
                 </button>
               </div>
@@ -106,6 +111,7 @@ export default function SignUp() {
           <div className="col-md-4 col-12"></div>
         </div>
       </div>
-    </>
+  
+    </div>
   );
 }

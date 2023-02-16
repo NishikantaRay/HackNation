@@ -19,10 +19,10 @@ export default function SignIn() {
   };
   return (
     <>
-      <div className="container ">
+      <div className="container" >
         <div className="text-center mt-3">
           <img
-            src="https://www.thesparksfoundationsingapore.org/images/logo_small.png"
+            src="logo.png"
             width={150}
             height={150}
             alt="logo"
@@ -33,26 +33,28 @@ export default function SignIn() {
           <div className="col-md-4 col-12">
             <form action="">
               <div className="mb-3">
-                <label for="userId" className="form-label">
+                {/* <label for="userId" className="form-label">
                   User ID
-                </label>
+                </label> */}
                 <input
                   type="text"
                   className="form-control"
                   id="userId"
                   value={userId}
+                  placeholder="Enter your User ID"
                   onChange={(e) => setUserId(e.target.value)}
                 />
               </div>
               <div className="mb-3">
-                <label for="password" className="form-label">
+                {/* <label for="password" className="form-label">
                   Password
-                </label>
+                </label> */}
                 <input
                   type="password"
                   className="form-control"
                   id="password"
                   value={password}
+                  placeholder="Enter your Password"
                   onChange={(e) => setPasword(e.target.value)}
                 />
               </div>
@@ -60,7 +62,7 @@ export default function SignIn() {
                 <button
                   type="submit"
                   onClick={(e) => handleInputs(e)}
-                  className="btn btn-primary"
+                  className="btn btn-primary-bg"
                 >
                   SignIn
                 </button>
