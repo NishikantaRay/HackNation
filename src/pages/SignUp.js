@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './others.css'
+import "./others.css";
+
 export default function SignUp() {
   const [user, setUser] = useState({
     name: "",
@@ -18,36 +19,32 @@ export default function SignUp() {
   const PostData = async (e) => {
     e.preventDefault();
     const { name, userId, mobile, password } = user;
-    axios.post("https://rv9h8k6o3l.execute-api.us-east-1.amazonaws.com/users/signup/", {
-      userId: userId,
-      name: name,
-      mobile: mobile,
-      password: password,
-      userGroup: "student",
-      userType: "user",
-    }).then((res) => {
-      console.log(res);
-    }).catch((err) => {
-      console.log(err);
-    }
-    );
+    axios
+      .post(
+        "https://rv9h8k6o3l.execute-api.us-east-1.amazonaws.com/users/signup/",
+        {
+          userId: userId,
+          name: name,
+          mobile: mobile,
+          password: password,
+          userGroup: "student",
+          userType: "user",
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   console.log(user);
   return (
-    <div >
-
-      <div className="container " >
-      
-
-
+    <div>
+      <div className="container ">
         <div className="text-center mt-3">
-          <img
-            src="logo.png"
-            width={150}
-            height={150}
-            alt="logo"
-          />
+          <img src="logo.png" width={150} height={150} alt="logo" />
         </div>
         <div className="row">
           <div className="col-md-4 col-12"></div>
@@ -90,7 +87,6 @@ export default function SignUp() {
                 />
               </div>
               <div className="mb-3">
-
                 <input
                   type="password"
                   className="form-control"
@@ -100,19 +96,27 @@ export default function SignUp() {
                 />
               </div>
               <div className="text-center">
-                <button type="submit" onClick={(e)=>{PostData(e)}} className="btn btn-primary-bg">
+                <button
+                  type="submit"
+                  onClick={(e) => {
+                    PostData(e);
+                  }}
+                  className="btn btn-primary-bg"
+                >
                   Submit
                 </button>
               </div>
             </form>
             <div className="text-center">
-            <a href="http://" className="text-dark">Already have an account ? Signin here</a>
+              Already have an account ?{" "}
+              <a href="/signin" className="text-dark">
+                Login here
+              </a>
             </div>
           </div>
           <div className="col-md-4 col-12"></div>
         </div>
       </div>
-  
     </div>
   );
 }

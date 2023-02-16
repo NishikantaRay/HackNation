@@ -6,27 +6,26 @@ export default function SignIn() {
   const [password, setPasword] = useState("");
   const handleInputs = async (e) => {
     e.preventDefault();
-    axios.post("https://rv9h8k6o3l.execute-api.us-east-1.amazonaws.com/users/login/", {
-      userId: userId,
-      password: password,
-    }).then((res) => {
-      console.log(res);
-    }
-    ).catch((err) => {
-      console.log(err);
-    }
-    );
+    axios
+      .post(
+        "https://rv9h8k6o3l.execute-api.us-east-1.amazonaws.com/users/login/",
+        {
+          userId: userId,
+          password: password,
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <>
-      <div className="container" >
+      <div className="container">
         <div className="text-center mt-3">
-          <img
-            src="logo.png"
-            width={150}
-            height={150}
-            alt="logo"
-          />
+          <img src="logo.png" width={150} height={150} alt="logo" />
         </div>
         <div className="row">
           <div className="col-md-4 col-12"></div>
@@ -69,9 +68,11 @@ export default function SignIn() {
               </div>
             </form>
             <div className="text-center">
-            <a href="http://" className="text-dark">Don't have an account ? Signup here</a>
+              Don't have an account ?{" "}
+              <a href="/signup" className="text-dark">
+                Register here
+              </a>
             </div>
-           
           </div>
           <div className="col-md-4 col-12"></div>
         </div>
