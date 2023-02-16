@@ -3,6 +3,10 @@ import React, { useState } from "react";
 export default function SignIn() {
   const [userId, setUserId] = useState("");
   const [password, setPasword] = useState("");
+  const handleInputs = (e) => {
+    e.preventDefault();
+    console.log(userId, password);
+  }
   return (
     <>
       <div className="container ">
@@ -27,7 +31,7 @@ export default function SignIn() {
                   className="form-control"
                   id="userId"
                   value={userId}
-                  onClick={setUserId}
+                  onChange={(e)=>setUserId(e.target.value)}
                 />
               </div>
               <div className="mb-3">
@@ -39,12 +43,12 @@ export default function SignIn() {
                   className="form-control"
                   id="password"
                   value={password}
-                  onClick={setPasword}
+                  onChange={(e)=>setPasword(e.target.value)}
                 />
               </div>
               <div className="text-center">
-                <button type="button" className="btn btn-primary">
-                  Primary
+                <button type="submit" onClick={(e)=>handleInputs(e)} className="btn btn-primary">
+                  SignIn
                 </button>
               </div>
             </form>

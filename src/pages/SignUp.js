@@ -1,6 +1,16 @@
-import React from 'react'
-
+import React,{useState,useEffect} from 'react'
 export default function SignUp() {
+    const [user,setUser]=useState({
+        name:"",userId:"",mobile:"",password:""
+    });
+    let name,value;
+    const handleInputs=(e)=>{
+        console.log(e);
+        name=e.target.name;
+        value=e.target.value;
+        setUser({...user,[name]:value});
+    }
+    console.log(user);
     return (
         <>
             <div className="container ">
@@ -12,23 +22,23 @@ export default function SignUp() {
                     <div className="col-md-4 col-12">
                         <form action="" >
                             <div className="mb-3">
-                                <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                                <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                                <label for="exampleFormControlInput1" className="form-label">User Id</label>
+                                <input type="text" className="form-control"  onChange={(e)=>handleInputs(e)} name="userId" placeholder="Enter your user id" />
                             </div>
                             <div className="mb-3">
-                                <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                                <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                                <label for="exampleFormControlInput1" className="form-label">Name</label>
+                                <input type="text" className="form-control" onChange={(e)=>handleInputs(e)} name="name" placeholder="Enter your name" />
                             </div>
                             <div className="mb-3">
-                                <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                                <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                                <label for="exampleFormControlInput1" className="form-label">Mobile Number</label>
+                                <input type="text" className="form-control" onChange={(e)=>handleInputs(e)} name="mobile" placeholder="Enter your Mobile Number" />
                             </div>
                             <div className="mb-3">
-                                <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                                <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                                <label for="exampleFormControlInput1" className="form-label">Password</label>
+                                <input type="password" className="form-control" onChange={(e)=>handleInputs(e)} name="password" placeholder="Enter your password" />
                             </div>
                             <div className="text-center">
-                                <button type="button" className="btn btn-primary">Primary</button>
+                                <button type="submit" className="btn btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>
