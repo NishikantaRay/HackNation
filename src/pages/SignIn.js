@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import { UserSignIn } from "../Utils/APICall";
 
 export default function SignIn() {
   const [userId, setUserId] = useState("");
   const [password, setPasword] = useState("");
-  const handleInputs = (e) => {
+  const handleInputs = async (e) => {
     e.preventDefault();
+    await UserSignIn({
+      userId,
+      password,
+    });
     console.log(userId, password);
   };
   return (
