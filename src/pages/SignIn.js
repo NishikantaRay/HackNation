@@ -1,16 +1,21 @@
 import React, { useState } from "react";
-import { UserSignIn } from "../Utils/APICall";
 
+import axios from "axios";
 export default function SignIn() {
   const [userId, setUserId] = useState("");
   const [password, setPasword] = useState("");
   const handleInputs = async (e) => {
     e.preventDefault();
-    await UserSignIn({
-      userId,
-      password,
-    });
-    console.log(userId, password);
+    axios.post("https://rv9h8k6o3l.execute-api.us-east-1.amazonaws.com/users/login/", {
+      userId: userId,
+      password: password,
+    }).then((res) => {
+      console.log(res);
+    }
+    ).catch((err) => {
+      console.log(err);
+    }
+    );
   };
   return (
     <>

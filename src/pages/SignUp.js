@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 export default function SignUp() {
   const [user, setUser] = useState({
     name: "",
@@ -14,6 +14,24 @@ export default function SignUp() {
     value = e.target.value;
     setUser({ ...user, [name]: value });
   };
+  const PostData = async (e) => {
+    e.preventDefault();
+    const { name, userId, mobile, password } = user;
+    axios.post("https://rv9h8k6o3l.execute-api.us-east-1.amazonaws.com/users/signup/", {
+      userId: userId,
+      name: name,
+      mobile: mobile,
+      password: password,
+      userGroup: "student",
+      userType: "user",
+    }).then((res) => {
+      console.log(res);
+    }).catch((err) => {
+      console.log(err);
+    }
+    );
+  };
+
   console.log(user);
   return (
     <>
@@ -79,7 +97,7 @@ export default function SignUp() {
                 />
               </div>
               <div className="text-center">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" onClick={(e)=>{PostData(e)}} className="btn btn-primary">
                   Submit
                 </button>
               </div>
