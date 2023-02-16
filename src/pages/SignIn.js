@@ -6,7 +6,7 @@ export default function SignIn() {
   const handleInputs = (e) => {
     e.preventDefault();
     console.log(userId, password);
-  }
+  };
   return (
     <>
       <div className="container ">
@@ -31,7 +31,7 @@ export default function SignIn() {
                   className="form-control"
                   id="userId"
                   value={userId}
-                  onChange={(e)=>setUserId(e.target.value)}
+                  onChange={(e) => setUserId(e.target.value)}
                 />
               </div>
               <div className="mb-3">
@@ -43,11 +43,15 @@ export default function SignIn() {
                   className="form-control"
                   id="password"
                   value={password}
-                  onChange={(e)=>setPasword(e.target.value)}
+                  onChange={(e) => setPasword(e.target.value)}
                 />
               </div>
               <div className="text-center">
-                <button type="submit" onClick={(e)=>handleInputs(e)} className="btn btn-primary">
+                <button
+                  type="submit"
+                  onClick={(e) => handleInputs(e)}
+                  className="btn btn-primary"
+                >
                   SignIn
                 </button>
               </div>
