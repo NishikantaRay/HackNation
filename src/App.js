@@ -1,16 +1,11 @@
-
-import './App.css';
-import HomePage from './pages/HomePage';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import "./App.css";
+import { Layout } from "./pages/Layout";
 
 function App() {
   return (
-    <div className="App">
-      {/* <HomePage/> */}
-      {/* <SignUp/> */}
-      <SignIn/>
-    </div>
+    <>
+      <Layout />
+    </>
   );
 }
 
