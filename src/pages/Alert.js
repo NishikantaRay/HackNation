@@ -9,7 +9,7 @@ function Alert() {
       <div className="text-center container mt-4">
         <div className="fs-1 fw-bold text-dark">ALERT REQUEST</div>
         <div className="row my-3">
-          <div className="col-6">
+          <div className="col lg-6 md-12">
             <div className="card">
               {/* <img src="..." className="card-img-top" alt="..." /> */}
               <div className="card-body">
@@ -27,7 +27,7 @@ function Alert() {
               </div>
             </div>
           </div>
-          <div className="col-6">
+          <div className="col lg-6 md-12">
             <div className="card">
               {/* <img src="..." className="card-img-top" alt="..." /> */}
               <div className="card-body">
