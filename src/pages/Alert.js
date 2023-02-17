@@ -21,15 +21,21 @@ function Alert() {
     }
     );
   };
-
+  const config = {
+    headers: { authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NzY1OTA0MjcsImV4cCI6MTY3OTE4MjQyN30.WKdbUj-ALdrhlaz6eHhWzYwys7GjgLGVZlUjOsRXbUI` }
+};
   // emg alert
   const handleInputsNormal = async (e) => {
     e.preventDefault();
     console.log(title, description);
+  
+    
+
     axios.post("https://rv9h8k6o3l.execute-api.us-east-1.amazonaws.com/alerts", {
       title: title,
       description: description,
       type: "emergency",
+
     }).then((res) => {
       console.log(res);
     }
@@ -121,18 +127,18 @@ function Alert() {
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Emergency Alert</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
             <form action="">
                 <div class="mb-3">
                   <label for="exampleFormControlInput1" class="form-label">Title</label>
-                  <input type="text" value={title} onChange={(e)=>{setTitle(e.target.value)}} class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                  <input type="text" value={title} onChange={(e)=>{setTitle(e.target.value)}} placeholder="Enter your title" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                  <textarea value={description} onChange={(e)=>{setDescription(e.target.value)}} class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea value={description} onChange={(e)=>{setDescription(e.target.value)}} placeholder="Enter your Description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div className="text-center">
                 <button type="submit" onClick={(e)=>{handleInputsNormal(e)}} class="btn btn-primary">Submit</button>
@@ -151,18 +157,18 @@ function Alert() {
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Normal Alert</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form action="">
                 <div class="mb-3">
                   <label for="exampleFormControlInput1" class="form-label">Title</label>
-                  <input type="text" value={title} onChange={(e)=>{setTitle(e.target.value)}} class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                  <input type="text" value={title} onChange={(e)=>{setTitle(e.target.value)}} class="form-control" id="exampleFormControlInput1" placeholder="Enter your title" />
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                  <textarea value={description} onChange={(e)=>{setDescription(e.target.value)}} class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea value={description} onChange={(e)=>{setDescription(e.target.value)}} class="form-control" id="exampleFormControlTextarea1" placeholder="Enter your description" rows="3"></textarea>
                 </div>
                 <div className="text-center">
                 <button type="submit" onClick={(e)=>{handleInputs(e)}} class="btn btn-primary">Submit</button>
