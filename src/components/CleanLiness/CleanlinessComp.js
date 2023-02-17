@@ -47,6 +47,45 @@ export default function CleanlinessComp() {
             </div>
             <div className="col-md-2 col-12"></div>
           </div>
+          <div className="row mt-4 ">
+            <div className="col-md-2 col-12"></div>
+            <div className="col-md-8 col-12">
+              <div class="card" >
+                <img src="https://imgs.search.brave.com/890JZC4gTZIGv95XDI_0uiAL9cZHReXmM6oXDPSz9Q0/rs:fit:844:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC50/NDhDbWVSUzUtMzQy/VkV0ME5Pd2RRSGFF/SyZwaWQ9QXBp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+
+            </div>
+            <div className="col-md-2 col-12"></div>
+          </div>
+          <div className="row mt-4 ">
+            <div className="col-md-2 col-12"></div>
+            <div className="col-md-8 col-12">
+              <div class="card" >
+                <img src="https://imgs.search.brave.com/890JZC4gTZIGv95XDI_0uiAL9cZHReXmM6oXDPSz9Q0/rs:fit:844:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC50/NDhDbWVSUzUtMzQy/VkV0ME5Pd2RRSGFF/SyZwaWQ9QXBp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+
+            </div>
+            <div className="col-md-2 col-12"></div>
+          </div>
+          <div className="row mt-4 ">
+            <div className="col-md-2 col-12"></div>
+            <div className="col-md-8 col-12">
+              <div class="card" >
+                <img src="https://imgs.search.brave.com/890JZC4gTZIGv95XDI_0uiAL9cZHReXmM6oXDPSz9Q0/rs:fit:844:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC50/NDhDbWVSUzUtMzQy/VkV0ME5Pd2RRSGFF/SyZwaWQ9QXBp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+
+            </div>
+            <div className="col-md-2 col-12"></div>
+          </div>
         </div>
       </div>
       <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -58,16 +97,16 @@ export default function CleanlinessComp() {
       </div>
       <div className="modal-body">
       <div class="input-group mb-3">
-  <label class="input-group-text" for="inputGroupFile01">Upload</label>
+  {/* <label class="input-group-text" for="inputGroupFile01">Upload</label> */}
   <input type="file" class="form-control" id="inputGroupFile01"/>
 </div>
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Name</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name"/>
 </div>
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Location</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your location"/>
 </div>
 <div className="text-center">
   <button className="btn btn-primary btn-lg">Submit</button>
