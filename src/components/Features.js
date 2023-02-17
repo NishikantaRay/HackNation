@@ -68,10 +68,11 @@ export default function Features() {
           <div class="row justify-content-center">
             <div class="col-xl-8 col-lg-8 col-md-12">
               <div class="section-tittle text-center mb-50">
-                <h2>Olla helps you to spruk your product’s features.</h2>
+                <h2>Features</h2>
                 <p>
-                  Combine sections from Olla's vast component library and create
-                  beautiful.
+                  Campus Health Hub is a comprehensive and user-friendly
+                  platform for accessing healthcare and wellness services on
+                  campus
                 </p>
               </div>
             </div>
@@ -80,7 +81,7 @@ export default function Features() {
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-cat single-cat2 text-center mb-30">
                 <h5>
-                  <a href="/alert">Alert System</a>
+                  <a href="/alert">Real-time Emergency Reporting</a>
                 </h5>
                 <div class="cat-icon">
                   <img src="assets/img/icon/services2.svg" alt="" />
@@ -96,7 +97,7 @@ export default function Features() {
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-cat single-cat3 text-center mb-30">
                 <h5>
-                  <a href="/doctorlist">Doctor's Appointment System</a>
+                  <a href="/doctorlist">Virtual Medical consultations</a>
                 </h5>
                 <div class="cat-icon">
                   <img src="assets/img/icon/services3.svg" alt="" />
@@ -112,7 +113,9 @@ export default function Features() {
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-cat single-cat3 text-center mb-30">
                 <h5>
-                  <a href="/Cleanliness">Cleanliness</a>
+                  <a href="/Cleanliness">
+                    Campus Waste and Sanitation Management
+                  </a>
                 </h5>
                 <div class="cat-icon">
                   <img src="assets/img/icon/services3.svg" alt="" />
@@ -128,7 +131,7 @@ export default function Features() {
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-cat text-center mb-30">
                 <h5>
-                  <a href="services.html">Student Forum</a>
+                  <a href="services.html">Peer-to-Peer Medicine Distribution</a>
                 </h5>
                 <div class="cat-icon">
                   <img src="assets/img/icon/services1.svg" alt="" />
