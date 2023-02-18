@@ -1,0 +1,139 @@
+service: serverless-crud
+frameworkVersion: "3"
+configValidationMode: error
+
+custom:
+  UserTableName: "users-table-${sls:stage}"
+  AlertTableName: "alerts-table-${sls:stage}"
+  AppointmentTableName: "appointment-table-${sls:stage}"
+  UploadBucketName: "hacknation-sit-bucket-${sls:stage}"
+  CleanTableName: "clean-table-sit-${sls:stage}"
+
+provider:
+  name: aws
+  stage: "dev"
+  runtime: nodejs18.x
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:*
+          Resource:
+            - "*"
+        - Effect: Allow
+          Action: sns:*
+          Resource:
+            - arn:aws:sns:us-east-1:${aws:accountId}:*
+        - Effect: Allow
+          Action: lambda:InvokeFunction
+          Resource:
+            - arn:aws:lambda:us-east-1:${aws:accountId}:*
+        - Effect: Allow
+          Action: s3:*
+          Resource: "*"
+  environment:
+    USERS_TABLE: ${self:custom.UserTableName}
+    ALERTS_TABLE: ${self:custom.AlertTableName}
+    APPOINTMENT_TABLE: ${self:custom.AppointmentTableName}
+    CLEAN_TABLE: ${self:custom.CleanTableName}
+    JWT_SECRET: ${env:JWT_SECRET, 'someRandomSecret'}
+    AWS_ACCOUNT_ID: ${aws:accountId}
+    S3_BUCKET: ${self:custom.UploadBucketName}
+
+functions:
+  user-api:
+    handler: functions/merged.handler
+    events:
+      - httpApi: "*"
+  subs-cmn-alert:
+    handler: cron/subAlert.commonHandler
+    events:
+      - stream:
+          arn: arn:aws:dynamodb:us-east-1:${aws:accountId}:table/users-table-dev/stream/2023-02-16T20:15:30.234
+          startingPosition: LATEST
+          batchSize: 1
+          filterPatterns:
+            - eventName: [INSERT]
+  subs-emergency-alert:
+    handler: cron/subAlert.emergencyHandler
+    events:
+      - stream:
+          arn: arn:aws:dynamodb:us-east-1:${aws:accountId}:table/users-table-dev/stream/2023-02-16T20:15:30.234
+          startingPosition: LATEST
+          batchSize: 1
+          filterPatterns:
+            - eventName: [INSERT]
+  send-cmn-alert:
+    handler: cron/subAlert.sendCommonAlert
+    events:
+      - stream:
+          arn: arn:aws:dynamodb:us-east-1:${aws:accountId}:table/alerts-table-dev/stream/2023-02-16T21:10:06.066
+          startingPosition: LATEST
+          batchSize: 1
+          filterPatterns:
+            - eventName: [INSERT]
+  send-emergency-alert:
+    handler: cron/subAlert.sendEmergencyAlert
+    events:
+      - stream:
+          arn: arn:aws:dynamodb:us-east-1:${aws:accountId}:table/alerts-table-dev/stream/2023-02-16T21:10:06.066
+          startingPosition: LATEST
+          batchSize: 1
+          filterPatterns:
+            - eventName: [INSERT]
+
+resources:
+  Resources:
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:custom.UserTableName}
+    AlertsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: alertId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: alertId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:custom.AlertTableName}
+    AppointmentsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: appId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: appId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:custom.AppointmentTableName}
+    CleanTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: cleanId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: cleanId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:custom.CleanTableName}    
+    UploadBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.UploadBucketName}
+        AccessControl: PublicRead
+
+plugins:
+  - serverless-offline
