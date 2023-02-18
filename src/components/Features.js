@@ -131,7 +131,7 @@ export default function Features() {
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <div class="single-cat text-center mb-30">
                 <h5>
-                  <a href="services.html">Peer-to-Peer Medicine Distribution</a>
+                  <a href="https://chh.discourse.group/latest">Peer-to-Peer Medicine Distribution</a>
                 </h5>
                 <div class="cat-icon">
                   <img src="assets/img/icon/services1.svg" alt="" />
